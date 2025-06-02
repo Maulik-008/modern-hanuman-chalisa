@@ -2,9 +2,10 @@ import Link from "next/link";
 import { chalisa, doha, closingDoha } from "@/lib/chalisa-data";
 import VerseCard from "@/components/verse-card";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, Share2 } from "lucide-react";
+import { ChevronLeft } from "lucide-react";
 import { Metadata } from "next";
 import Script from "next/script";
+import ShareButton from "@/components/share-button";
 
 export const metadata: Metadata = {
   title: "Hanuman Chalisa - Complete Original Text with Meanings",
@@ -90,23 +91,7 @@ export default function ChalisaPage() {
                   Back to Home
                 </Button>
               </Link>
-              <Button
-                variant="outline"
-                size="sm"
-                className="rounded-full"
-                onClick={() => {
-                  if (navigator.share) {
-                    navigator.share({
-                      title: "Hanuman Chalisa",
-                      text: "Read the complete Hanuman Chalisa with meanings",
-                      url: window.location.href,
-                    });
-                  }
-                }}
-              >
-                <Share2 className="h-4 w-4 mr-2" />
-                Share
-              </Button>
+              <ShareButton />
             </nav>
 
             <header className="text-center max-w-3xl mx-auto mb-12">
