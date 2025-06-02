@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://hanuman-chalisa.org/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2023-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://hanuman-chalisa.org/chalisa</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <lastmod>2023-08-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://hanuman-chalisa.org/chalisa" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://hanuman-chalisa.org/languages/english" />
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://hanuman-chalisa.org/languages/bengali" />
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://hanuman-chalisa.org/languages/gujarati" />
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://hanuman-chalisa.org/languages/tamil" />
+  </url>
+  <url>
+    <loc>https://hanuman-chalisa.org/languages</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2023-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://hanuman-chalisa.org/languages/english</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2023-08-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://hanuman-chalisa.org/languages/english" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://hanuman-chalisa.org/chalisa" />
+  </url>
+  <url>
+    <loc>https://hanuman-chalisa.org/languages/bengali</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2023-08-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://hanuman-chalisa.org/languages/bengali" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://hanuman-chalisa.org/chalisa" />
+  </url>
+  <url>
+    <loc>https://hanuman-chalisa.org/languages/gujarati</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2023-08-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://hanuman-chalisa.org/languages/gujarati" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://hanuman-chalisa.org/chalisa" />
+  </url>
+  <url>
+    <loc>https://hanuman-chalisa.org/languages/tamil</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <lastmod>2023-08-15</lastmod>
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://hanuman-chalisa.org/languages/tamil" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://hanuman-chalisa.org/chalisa" />
+  </url>
+  <url>
+    <loc>https://hanuman-chalisa.org/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2023-08-15</lastmod>
+  </url>
+  <url>
+    <loc>https://hanuman-chalisa.org/meaning</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <lastmod>2023-08-15</lastmod>
+  </url>
+</urlset> 
