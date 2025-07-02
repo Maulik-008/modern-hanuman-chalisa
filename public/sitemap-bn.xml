@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://jayhanuman.maulikjoshi.online/languages/bengali</loc>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <lastmod>2025-07-02</lastmod>
+    <xhtml:link rel="alternate" hreflang="bn-IN" href="https://jayhanuman.maulikjoshi.online/languages/bengali" />
+    <xhtml:link rel="alternate" hreflang="hi-IN" href="https://jayhanuman.maulikjoshi.online/chalisa" />
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://jayhanuman.maulikjoshi.online/languages/english" />
+    <xhtml:link rel="alternate" hreflang="gu-IN" href="https://jayhanuman.maulikjoshi.online/languages/gujarati" />
+    <xhtml:link rel="alternate" hreflang="ta-IN" href="https://jayhanuman.maulikjoshi.online/languages/tamil" />
+  </url>
+</urlset> 
