@@ -2,10 +2,29 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, Languages } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import AudioPlayer from "@/components/audio-player";
 
 export const metadata = {
-  title: "Hanuman Chalisa in Gujarati",
-  description: "Read the complete Hanuman Chalisa translated in Gujarati",
+  title:
+    "Hanuman Chalisa in Gujarati - હનુમાન ચાલીસા | Complete Gujarati Translation",
+  description:
+    "Read the complete Hanuman Chalisa (હનુમાન ચાલીસા) in Gujarati with accurate translations. All 40 verses of this powerful Hindu devotional hymn dedicated to Lord Hanuman.",
+  keywords: [
+    "Hanuman Chalisa Gujarati",
+    "હનુમાન ચાલીસા",
+    "Gujarati Hanuman Chalisa",
+    "હનુમાન ચાલીસા ગુજરાતી",
+    "Hanuman Chalisa Gujarati translation",
+    "Gujarati prayer",
+    "Hindu prayer Gujarati",
+    "Hanuman mantra Gujarati",
+  ],
+  openGraph: {
+    title: "Hanuman Chalisa in Gujarati - હનુમાન ચાલીસા",
+    description:
+      "Complete Gujarati translation of Hanuman Chalisa with all 40 verses",
+    type: "article",
+  },
 };
 
 // Gujarati translation of Hanuman Chalisa
@@ -310,10 +329,25 @@ export default function GujaratiChalisaPage() {
           <h2 className="font-orbitron text-xl md:text-2xl mb-6 text-[#38bdf8]">
             GUJARATI TRANSLATION
           </h2>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground mb-6">
             Complete Gujarati translation of the Hanuman Chalisa, a devotional
             hymn dedicated to Lord Hanuman
           </p>
+
+          {/* Audio Player */}
+          <div className="max-w-md mx-auto">
+            <AudioPlayer
+              text={`${gujaratiDoha
+                .map((v) => v.text)
+                .join(" ")} ${gujaratiChalisa
+                .map((v) => v.text)
+                .join(" ")} ${gujaratiClosingDoha
+                .map((v) => v.text)
+                .join(" ")}`}
+              language="gu-IN"
+              title="Listen in Gujarati"
+            />
+          </div>
         </div>
 
         <Card className="max-w-3xl mx-auto overflow-hidden bg-background/30 backdrop-blur-md border-border/30 mb-10">

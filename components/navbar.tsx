@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 const navItems = [
   { name: "Home", path: "/" },
   { name: "Chalisa", path: "/chalisa" },
+  { name: "Listen", path: "/listen" },
   { name: "Meaning", path: "/meaning" },
   { name: "About", path: "/about" },
 ];
@@ -22,7 +23,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -31,8 +32,8 @@ export default function Navbar() {
     <header
       className={cn(
         "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled 
-          ? "bg-background/80 backdrop-blur-md border-b border-border/50 py-2" 
+        isScrolled
+          ? "bg-background/80 backdrop-blur-md border-b border-border/50 py-2"
           : "bg-transparent py-4"
       )}
     >
@@ -57,14 +58,10 @@ export default function Navbar() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#38bdf8] transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
-            
-            <Button variant="outline" size="sm" className="border border-[#38bdf8]/30 text-[#38bdf8] hover:bg-[#38bdf8]/10">
-              Listen
-            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden flex items-center"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
@@ -80,7 +77,7 @@ export default function Navbar() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
@@ -97,10 +94,6 @@ export default function Navbar() {
                 {item.name}
               </Link>
             ))}
-            
-            <Button variant="outline" className="border border-[#38bdf8]/30 text-[#38bdf8] hover:bg-[#38bdf8]/10 w-full">
-              Listen
-            </Button>
           </div>
         </motion.div>
       )}

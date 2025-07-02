@@ -6,21 +6,27 @@ import { ChevronLeft } from "lucide-react";
 import { Metadata } from "next";
 import Script from "next/script";
 import ShareButton from "@/components/share-button";
+import AudioPlayer from "@/components/audio-player";
 
 export const metadata: Metadata = {
-  title: "Hanuman Chalisa - Complete Original Text with Meanings",
+  title: "Hanuman Chalisa Hindi - हनुमान चालीसा | Original Text with Meanings",
   description:
-    "Read the complete Hanuman Chalisa with verse-by-verse meaning and translations. Original text in Hindi with Devanagari script and romanized transliteration.",
+    "Read the complete Hanuman Chalisa (हनुमान चालीसा) in Hindi with verse-by-verse meaning and translations. Original text by Tulsidas in Devanagari script with romanized transliteration. All 40 verses with detailed meanings.",
   keywords: [
     "Hanuman Chalisa",
     "हनुमान चालीसा",
+    "Hanuman Chalisa Hindi",
+    "हनुमान चालीसा हिंदी",
     "Tulsidas",
     "Original text",
     "Verse meanings",
-    "Hindi",
+    "Hindi prayer",
     "Sanskrit",
     "Religious hymn",
     "Lord Hanuman",
+    "Bajrang Bali",
+    "हनुमान जी की आरती",
+    "Hanuman mantra",
   ],
   alternates: {
     canonical: "/chalisa",
@@ -30,9 +36,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Hanuman Chalisa - Complete Original Text with Meanings",
+    title: "Hanuman Chalisa Hindi - हनुमान चालीसा | Original Text",
     description:
-      "Read the complete Hanuman Chalisa with verse-by-verse meaning and translations. Original text in Hindi with Devanagari script and romanized transliteration.",
+      "Complete Hanuman Chalisa in Hindi with all 40 verses, meanings and transliteration. Original text by Tulsidas.",
     url: "/chalisa",
     type: "article",
   },
@@ -101,10 +107,21 @@ export default function ChalisaPage() {
               <h2 className="font-orbitron text-xl md:text-2xl mb-6 text-[#38bdf8]">
                 HANUMAN CHALISA
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground mb-6">
                 A devotional hymn dedicated to Lord Hanuman, composed by the
                 16th-century poet Tulsidas in the Awadhi language.
               </p>
+
+              {/* Full Chalisa Audio Player */}
+              <div className="max-w-md mx-auto">
+                <AudioPlayer
+                  text={`${doha.map((v) => v.hindi).join(" ")} ${chalisa
+                    .map((v) => v.hindi)
+                    .join(" ")} ${closingDoha.map((v) => v.hindi).join(" ")}`}
+                  language="hi-IN"
+                  title="Listen to Complete Hanuman Chalisa"
+                />
+              </div>
             </header>
 
             <div className="max-w-3xl mx-auto space-y-6">

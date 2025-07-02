@@ -14,23 +14,17 @@ export default function CompleteChalisaCard() {
       <meta itemProp="name" content="Hanuman Chalisa" />
       <meta itemProp="inLanguage" content="hi-IN" />
       <meta itemProp="author" content="Tulsidas" />
-      <CardContent className="p-6 md:p-8">
-        <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
+      <CardContent className="p-4 md:p-6">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-4 gap-3">
           <div>
             <h2
-              className="font-devanagari text-3xl font-bold text-primary mb-2"
+              className="font-devanagari text-3xl md:text-4xl font-bold text-primary"
               itemProp="headline"
             >
-              संपूर्ण हनुमान चालीसा
+              श्री हनुमान चालीसा
             </h2>
-            <p
-              className="text-muted-foreground text-sm"
-              itemProp="alternativeHeadline"
-            >
-              Complete Hanuman Chalisa in Hindi with Devanagari script
-            </p>
           </div>
-          <div className="flex space-x-3 mt-4 md:mt-0">
+          <div className="flex gap-2">
             <Link href="/chalisa">
               <Button
                 variant="outline"
@@ -38,8 +32,8 @@ export default function CompleteChalisaCard() {
                 className="rounded-full border-[#38bdf8]/30 text-[#38bdf8] hover:bg-[#38bdf8]/10"
                 aria-label="View detailed page with verse by verse meanings"
               >
-                <BookOpen className="h-4 w-4 mr-2" />
-                Detailed View
+                <BookOpen className="h-4 w-4 mr-1.5" />
+                Detailed
               </Button>
             </Link>
             <Link href="/languages">
@@ -49,135 +43,124 @@ export default function CompleteChalisaCard() {
                 className="rounded-full border-[#38bdf8]/30 text-[#38bdf8] hover:bg-[#38bdf8]/10"
                 aria-label="View Hanuman Chalisa in other languages"
               >
-                <Languages className="h-4 w-4 mr-2" />
-                Other Languages
+                <Languages className="h-4 w-4 mr-1.5" />
+                Languages
               </Button>
             </Link>
           </div>
         </div>
 
-        <section
-          className="bg-[#0b1120]/30 rounded-xl p-4 md:p-6 border border-[#38bdf8]/10 mb-6"
-          aria-labelledby="opening-doha-heading"
-          itemProp="articleSection"
-        >
-          <h3
-            id="opening-doha-heading"
-            className="font-orbitron text-lg text-[#38bdf8] mb-4"
+        <div className="space-y-4">
+          {/* Opening Doha */}
+          <section
+            className="bg-[#0b1120]/30 rounded-lg p-4 md:p-5 border border-[#38bdf8]/10"
+            aria-labelledby="opening-doha-heading"
+            itemProp="articleSection"
           >
-            Opening Doha (Couplets)
-          </h3>
-          <div className="space-y-4">
-            {doha.map((verse) => (
-              <div
-                key={`doha-${verse.id}`}
-                className="border-b border-border/20 pb-4 last:border-0 last:pb-0"
-                itemScope
-                itemProp="hasPart"
-                itemType="https://schema.org/CreativeWork"
-              >
-                <meta itemProp="position" content={`${verse.id}`} />
-                <meta itemProp="name" content={`Opening Doha ${verse.id}`} />
-                <p
-                  className="font-devanagari text-lg md:text-xl text-primary mb-2"
-                  lang="hi"
-                  itemProp="text"
+            <h3
+              id="opening-doha-heading"
+              className="font-orbitron text-lg text-[#38bdf8] mb-3 uppercase tracking-wider"
+            >
+              दोहा
+            </h3>
+            <div className="space-y-3">
+              {doha.map((verse) => (
+                <div
+                  key={`doha-${verse.id}`}
+                  className="text-center"
+                  itemScope
+                  itemProp="hasPart"
+                  itemType="https://schema.org/CreativeWork"
                 >
-                  {verse.hindi}
-                </p>
-                <p
-                  className="text-sm text-muted-foreground"
-                  lang="en"
-                  itemProp="alternateName"
-                >
-                  {verse.english}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+                  <meta itemProp="position" content={`${verse.id}`} />
+                  <meta itemProp="name" content={`Opening Doha ${verse.id}`} />
+                  <p
+                    className="font-devanagari text-lg md:text-xl leading-relaxed text-primary"
+                    lang="hi"
+                    itemProp="text"
+                  >
+                    {verse.hindi}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section
-          className="bg-[#0b1120]/30 rounded-xl p-4 md:p-6 border border-[#38bdf8]/10 mb-6"
-          aria-labelledby="chaupai-heading"
-          itemProp="articleSection"
-        >
-          <h3
-            id="chaupai-heading"
-            className="font-orbitron text-lg text-[#38bdf8] mb-4"
+          {/* Chaupai */}
+          <section
+            className="bg-[#0b1120]/30 rounded-lg p-4 md:p-5 border border-[#38bdf8]/10"
+            aria-labelledby="chaupai-heading"
+            itemProp="articleSection"
           >
-            Chaupai (Quatrains)
-          </h3>
-          <div className="space-y-4">
-            {chalisa.map((verse) => (
-              <div
-                key={`chalisa-${verse.id}`}
-                className="border-b border-border/20 pb-4 last:border-0 last:pb-0"
-                itemScope
-                itemProp="hasPart"
-                itemType="https://schema.org/CreativeWork"
-              >
-                <meta itemProp="position" content={`${verse.id}`} />
-                <meta itemProp="name" content={`Verse ${verse.id}`} />
-                <p
-                  className="font-devanagari text-lg md:text-xl text-primary mb-2"
-                  lang="hi"
-                  itemProp="text"
+            <h3
+              id="chaupai-heading"
+              className="font-orbitron text-lg text-[#38bdf8] mb-4 uppercase tracking-wider text-center"
+            >
+              चौपाई
+            </h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+              {chalisa.map((verse) => (
+                <div
+                  key={`chalisa-${verse.id}`}
+                  className="bg-[#0b1120]/20 rounded-md p-3 md:p-4 backdrop-blur-sm border border-[#38bdf8]/5 hover:bg-[#38bdf8]/5 transition-colors"
+                  itemScope
+                  itemProp="hasPart"
+                  itemType="https://schema.org/CreativeWork"
                 >
-                  {verse.hindi}
-                </p>
-                <p
-                  className="text-sm text-muted-foreground"
-                  lang="en"
-                  itemProp="alternateName"
-                >
-                  {verse.english}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+                  <meta itemProp="position" content={`${verse.id}`} />
+                  <meta itemProp="name" content={`Verse ${verse.id}`} />
+                  <div className="flex items-start gap-2">
+                    <span className="text-lg text-[#38bdf8] font-medium">
+                      {verse.id}.
+                    </span>
+                    <p
+                      className="font-devanagari text-base md:text-lg leading-relaxed text-primary flex-1"
+                      lang="hi"
+                      itemProp="text"
+                    >
+                      {verse.hindi}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
 
-        <section
-          className="bg-[#0b1120]/30 rounded-xl p-4 md:p-6 border border-[#38bdf8]/10"
-          aria-labelledby="closing-doha-heading"
-          itemProp="articleSection"
-        >
-          <h3
-            id="closing-doha-heading"
-            className="font-orbitron text-lg text-[#38bdf8] mb-4"
+          {/* Closing Doha */}
+          <section
+            className="bg-[#0b1120]/30 rounded-lg p-4 md:p-5 border border-[#38bdf8]/10"
+            aria-labelledby="closing-doha-heading"
+            itemProp="articleSection"
           >
-            Closing Doha
-          </h3>
-          <div className="space-y-4">
-            {closingDoha.map((verse) => (
-              <div
-                key={`closing-doha-${verse.id}`}
-                className="border-b border-border/20 pb-4 last:border-0 last:pb-0"
-                itemScope
-                itemProp="hasPart"
-                itemType="https://schema.org/CreativeWork"
-              >
-                <meta itemProp="position" content={`${verse.id}`} />
-                <meta itemProp="name" content="Closing Doha" />
-                <p
-                  className="font-devanagari text-lg md:text-xl text-primary mb-2"
-                  lang="hi"
-                  itemProp="text"
+            <h3
+              id="closing-doha-heading"
+              className="font-orbitron text-lg text-[#38bdf8] mb-3 uppercase tracking-wider"
+            >
+              समापन दोहा
+            </h3>
+            <div className="space-y-3">
+              {closingDoha.map((verse) => (
+                <div
+                  key={`closing-doha-${verse.id}`}
+                  className="text-center"
+                  itemScope
+                  itemProp="hasPart"
+                  itemType="https://schema.org/CreativeWork"
                 >
-                  {verse.hindi}
-                </p>
-                <p
-                  className="text-sm text-muted-foreground"
-                  lang="en"
-                  itemProp="alternateName"
-                >
-                  {verse.english}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
+                  <meta itemProp="position" content={`${verse.id}`} />
+                  <meta itemProp="name" content="Closing Doha" />
+                  <p
+                    className="font-devanagari text-lg md:text-xl leading-relaxed text-primary"
+                    lang="hi"
+                    itemProp="text"
+                  >
+                    {verse.hindi}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+        </div>
       </CardContent>
     </Card>
   );

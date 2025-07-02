@@ -2,19 +2,25 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, Languages } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import AudioPlayer from "@/components/audio-player";
 import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Hanuman Chalisa in English | Complete Translation with Meaning",
   description:
-    "Read the complete Hanuman Chalisa in English translation. Each verse translated with accurate meaning, proper context and detailed explanation.",
+    "Read the complete Hanuman Chalisa in English translation. All 40 verses translated with accurate meaning, proper context and detailed explanation of this powerful Hindu prayer.",
   keywords: [
     "Hanuman Chalisa English",
     "English translation",
     "Hanuman Chalisa meaning",
     "English Hanuman prayer",
     "Chalisa translation",
+    "Hanuman Chalisa English version",
+    "40 verses English",
+    "Hindu prayer English",
+    "Lord Hanuman English",
+    "Tulsidas English translation",
   ],
   alternates: {
     canonical: "/languages/english",
@@ -29,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Hanuman Chalisa in English | Complete Translation with Meaning",
     description:
-      "Read the complete Hanuman Chalisa in English translation. Each verse translated with accurate meaning, proper context and detailed explanation.",
+      "Read the complete Hanuman Chalisa in English translation. All 40 verses translated with accurate meaning and detailed explanation.",
     url: "/languages/english",
     type: "article",
   },
@@ -128,6 +134,93 @@ const englishChalisa = [
     id: 20,
     text: "Every difficult task in this world becomes easy by your grace.",
   },
+  {
+    id: 21,
+    text: "You are the guardian at Rama's door. No one can enter without your permission.",
+  },
+  {
+    id: 22,
+    text: "All happiness is attained under your protection. When you are the protector, there is nothing to fear.",
+  },
+  {
+    id: 23,
+    text: "You alone can control your own splendor. All three worlds tremble at your roar.",
+  },
+  {
+    id: 24,
+    text: "Ghosts and evil spirits dare not come near when your name, O Mahavir, is uttered.",
+  },
+  {
+    id: 25,
+    text: "All diseases are destroyed and all pain vanishes for one who constantly remembers Hanuman the brave.",
+  },
+  {
+    id: 26,
+    text: "Hanuman releases from affliction all those who remember him in thought, word and deed.",
+  },
+  {
+    id: 27,
+    text: "Rama is the supreme ascetic king, and you carry out all his work.",
+  },
+  {
+    id: 28,
+    text: "Whoever comes to you with any desire obtains the abundance of the four fruits of life.",
+  },
+  {
+    id: 29,
+    text: "Your glory prevails throughout the four ages, and your fame radiates throughout the world.",
+  },
+  {
+    id: 30,
+    text: "You are the protector of saints and sages, the destroyer of demons, and the darling of Rama.",
+  },
+  {
+    id: 31,
+    text: "You grant the eight powers and the nine treasures by the boon you received from Mother Janaki.",
+  },
+  {
+    id: 32,
+    text: "You hold the elixir of Rama's name and remain eternally his servant.",
+  },
+  {
+    id: 33,
+    text: "Through devotion to you, one comes to Rama and is freed from the sorrows of countless lives.",
+  },
+  {
+    id: 34,
+    text: "At death, one goes to Rama's own abode, and is born there as God's devotee.",
+  },
+  {
+    id: 35,
+    text: "One need not think of any other deity. Hanuman alone will give all happiness.",
+  },
+  {
+    id: 36,
+    text: "All afflictions cease and all pain is removed for those who remember Hanuman the powerful.",
+  },
+  {
+    id: 37,
+    text: "Victory, victory, victory to Lord Hanuman! Bestow your grace on me, as my supreme Guru!",
+  },
+  {
+    id: 38,
+    text: "One who recites this Chalisa a hundred times is freed from all bondage and obtains great happiness.",
+  },
+  {
+    id: 39,
+    text: "One who reads this Hanuman Chalisa will obtain success, as Gauri's Lord (Shiva) is witness.",
+  },
+  {
+    id: 40,
+    text: "Says Tulsidas, who is ever the servant of Lord Hari: 'O Lord, make your home in my heart.'",
+  },
+];
+
+const englishClosingDoha = [
+  {
+    id: 1,
+    text: "O Son of the Wind, destroyer of sorrow, embodiment of blessings, with Rama, Lakshmana and Sita, live in my heart, O King of Gods.",
+  },
 ];
 
 export default function EnglishHanumanChalisaPage() {
@@ -215,10 +308,25 @@ export default function EnglishHanumanChalisaPage() {
               <h2 className="font-orbitron text-xl md:text-2xl mb-6 text-[#38bdf8]">
                 ENGLISH TRANSLATION
               </h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground mb-6">
                 Complete English translation of the Hanuman Chalisa, a
                 devotional hymn dedicated to Lord Hanuman
               </p>
+
+              {/* Audio Player */}
+              <div className="max-w-md mx-auto">
+                <AudioPlayer
+                  text={`${englishDoha
+                    .map((v) => v.text)
+                    .join(" ")} ${englishChalisa
+                    .map((v) => v.text)
+                    .join(" ")} ${englishClosingDoha
+                    .map((v) => v.text)
+                    .join(" ")}`}
+                  language="en-US"
+                  title="Listen in English"
+                />
+              </div>
             </header>
 
             <section aria-labelledby="opening-verses-heading" className="mb-10">
@@ -297,6 +405,49 @@ export default function EnglishHanumanChalisaPage() {
                           >
                             {verse.id}
                           </div>
+                          <p
+                            className="text-primary text-lg md:text-xl leading-relaxed"
+                            itemProp="text"
+                          >
+                            {verse.text}
+                          </p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </section>
+
+            <section aria-labelledby="closing-verse-heading" className="mt-10">
+              <Card
+                className="max-w-3xl mx-auto overflow-hidden bg-background/30 backdrop-blur-md border-border/30"
+                itemScope
+                itemType="https://schema.org/CreativeWork"
+              >
+                <CardContent className="p-6 md:p-8">
+                  <h3
+                    id="closing-verse-heading"
+                    className="font-orbitron text-lg text-[#38bdf8] mb-6"
+                    itemProp="name"
+                  >
+                    Closing Verse
+                  </h3>
+                  <div className="space-y-6" itemProp="text">
+                    {englishClosingDoha.map((verse) => (
+                      <div
+                        key={`closing-doha-${verse.id}`}
+                        className="border-b border-border/20 pb-6 last:border-0 last:pb-0"
+                        itemScope
+                        itemProp="hasPart"
+                        itemType="https://schema.org/CreativeWork"
+                      >
+                        <meta itemProp="position" content={`${verse.id}`} />
+                        <div className="flex items-start">
+                          <div
+                            className="bg-[#38bdf8]/10 text-[#38bdf8] text-xs rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-1"
+                            aria-hidden="true"
+                          ></div>
                           <p
                             className="text-primary text-lg md:text-xl leading-relaxed"
                             itemProp="text"

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { Play, Pause, Info } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "@/lib/utils";
@@ -16,6 +16,49 @@ interface VerseCardProps {
 export default function VerseCard({ verse, index }: VerseCardProps) {
   const [isPlaying, setIsPlaying] = useState(false);
   const [showMeaning, setShowMeaning] = useState(false);
+  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+
+  const speak = () => {
+    if (!("speechSynthesis" in window)) return;
+
+    // Stop any current speech
+    window.speechSynthesis.cancel();
+
+    const text = `${verse.hindi}`;
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = "hi-IN";
+    utterance.rate = 0.7;
+    utterance.pitch = 1;
+    utterance.volume = 1;
+
+    utterance.onstart = () => {
+      setIsPlaying(true);
+    };
+
+    utterance.onend = () => {
+      setIsPlaying(false);
+    };
+
+    utterance.onerror = () => {
+      setIsPlaying(false);
+    };
+
+    utteranceRef.current = utterance;
+    window.speechSynthesis.speak(utterance);
+  };
+
+  const stop = () => {
+    window.speechSynthesis.cancel();
+    setIsPlaying(false);
+  };
+
+  const togglePlay = () => {
+    if (isPlaying) {
+      stop();
+    } else {
+      speak();
+    }
+  };
 
   return (
     <motion.div
@@ -59,14 +102,14 @@ export default function VerseCard({ verse, index }: VerseCardProps) {
               size="sm"
               variant="ghost"
               className="text-muted-foreground hover:text-[#38bdf8] hover:bg-[#38bdf8]/10 rounded-full"
-              onClick={() => setIsPlaying(!isPlaying)}
+              onClick={togglePlay}
             >
               {isPlaying ? (
                 <Pause className="h-4 w-4 mr-2" />
               ) : (
                 <Play className="h-4 w-4 mr-2" />
               )}
-              {isPlaying ? "Pause" : "Play"}
+              {isPlaying ? "Stop" : "Listen"}
             </Button>
 
             <Button

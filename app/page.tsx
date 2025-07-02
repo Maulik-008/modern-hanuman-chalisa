@@ -7,17 +7,25 @@ import Script from "next/script";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Hanuman Chalisa - Complete Text in Multiple Languages",
+  title:
+    "Hanuman Chalisa - Complete Text in Hindi, English, Bengali, Gujarati & Tamil",
   description:
-    "Experience the complete Hanuman Chalisa in Hindi with translations to English, Bengali, Gujarati, and Tamil. Includes verse meanings and audio recitation.",
+    "Read the complete Hanuman Chalisa (हनुमान चालीसा) in Hindi with accurate translations to English, Bengali, Gujarati, and Tamil. All 40 verses with meanings, transliteration and spiritual benefits. Original text by Tulsidas.",
   keywords: [
     "Hanuman Chalisa",
     "हनुमान चालीसा",
+    "Hanuman Chalisa online",
     "Tulsidas",
     "devotional hymn",
     "Lord Hanuman worship",
     "complete text",
     "translations",
+    "Hanuman Chalisa all languages",
+    "Hindu prayer",
+    "Bajrang Bali",
+    "40 verses",
+    "spiritual benefits",
+    "Hanuman mantra",
   ],
 };
 
@@ -73,13 +81,24 @@ export default function Home() {
 
           <CompleteChalisaCard />
 
-          <div className="mt-8 text-center">
-            <Link href="/languages">
-              <Button className="rounded-full bg-[#38bdf8] hover:bg-[#38bdf8]/90 text-white">
-                Explore Other Languages
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+          <div className="mt-8 text-center space-y-4">
+            <div className="flex flex-wrap justify-center gap-4">
+              <Link href="/listen">
+                <Button className="rounded-full bg-[#38bdf8] hover:bg-[#38bdf8]/90 text-white">
+                  🎧 Listen to Audio
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link href="/languages">
+                <Button
+                  variant="outline"
+                  className="rounded-full border-[#38bdf8]/30 text-[#38bdf8] hover:bg-[#38bdf8]/10"
+                >
+                  Explore Other Languages
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
