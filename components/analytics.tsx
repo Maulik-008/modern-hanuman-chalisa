@@ -23,7 +23,7 @@ export function Analytics() {
   useEffect(() => {
     if (pathname && window.gtag) {
       const url = pathname + searchParams.toString();
-      window.gtag("config", process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || "", {
+      window.gtag("config", "G-WMH1R8Q2LW", {
         page_path: url,
       });
     }
@@ -33,7 +33,7 @@ export function Analytics() {
     <>
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-WMH1R8Q2LW`}
       />
       <Script
         id="gtag-init"
@@ -43,7 +43,7 @@ export function Analytics() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID}', {
+            gtag('config', 'G-WMH1R8Q2LW', {
               page_path: window.location.pathname,
             });
           `,
